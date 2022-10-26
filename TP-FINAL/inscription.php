@@ -5,23 +5,19 @@ include 'db.php';
 error_reporting(0);
 session_start();
 
-if (isset($_POST['enregister'])) {
+if(isset($_POST['enregister'])) {
+    $prenom = $_POST['prenom'];
     $nom = $_POST['nom'];
-    $prenom =  $_POST['prenom'];
-    $mail =  $_POST['mail'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     
-    $sql = "SELECT * FROM users_info WHERE email-$mail";
+    $sql = "SELECT * FROM users WHERE email=$email";
 
-   // $sql = "INSERT INTO users_info (nom, prenom, mail, password) VALUES('$nom', '$prenom', '$mail', '$password')";
-   if (!$results->num_rows > 0) {
-    $sql = "INSERT INTO users_info (nom, prenom, mail, mdp) VALUES( '$nom' , '$prenom' , '$mail' , '$password' )";
-    $result = mysqli_query($conex, $sql);
+
+   if (!$result->num_rows > 0) {
+    $sql = "INSERT INTO users ( prenom, nom, email, mdp) VALUES( '$prenom', '$nom', '$email', '$password')";
+    $result = mysqli_query($conn, $sql);
    }
-   
-  
-
-
 }
 
 ?>
@@ -70,7 +66,7 @@ if (isset($_POST['enregister'])) {
        	  	<h3>creation de compte</h3>
        	  	 <input type="text" class="my-2 form-control" placeholder="Nom" name="nom">
        	  	 <input type="text" class="my-2 form-control" placeholder="Prénom" name="prenom">
-				  <input type="email" class="my-2 form-control" placeholder="Email" name="mail">
+				  <input type="email" class="my-2 form-control" placeholder="Email" name="email">
 				  <input type="password" class="my-2 form-control" placeholder="Mot de passe" name="password">
 				
        	   
