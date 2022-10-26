@@ -1,24 +1,38 @@
 <?php
 
-include 'db.php';
+include ('db.php');
 
-error_reporting(0);
-session_start();
 
-if(isset($_POST['enregister'])) {
-    $prenom = $_POST['prenom'];
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+//if(isset($_POST['enregistrer'])) {
+  //  $nom = $_POST['nom'];
+//$prenom = $_POST['prenom'];
+  //  $email = $_POST['email'];
+  //  $password = $_POST['password'];
     
-    $sql = "SELECT * FROM users WHERE email=$email";
+//$req = "INSERT INTO users ( nom, prenom, email, password) VALUES( ?, ?, ?, ?)";
+//$execute = $pdo->prepare($req);
+// $stm = $execute->execute([$nom,$prenom,$email,$password]);
+
+   //if (!$result->num_rows > 0) {
+  //  $sql = "INSERT INTO users ( nom, prenom, email, password) VALUES( $nom,$prenom,$email, $password)";
+  //  $result = mysqli_query($conn, $sql);
+  // }
+//}
+if (isset($_POST['enregistrer'])) {
 
 
-   if (!$result->num_rows > 0) {
-    $sql = "INSERT INTO users ( prenom, nom, email, mdp) VALUES( '$prenom', '$nom', '$email', '$password')";
-    $result = mysqli_query($conn, $sql);
-   }
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+
+  $req = "INSERT INTO users(nom, prenom, email, password) VALUES(?,?,?,?)";
+  $execute = $pdo->prepare($req);
+  $stm = $execute->execute([$nom, $prenom, $email, $password]);
+  echo "<center>inscription effectué avec success !</center>";
 }
+
 
 ?>
 
