@@ -3,21 +3,7 @@
 include ('db.php');
 
 
-//if(isset($_POST['enregistrer'])) {
-  //  $nom = $_POST['nom'];
-//$prenom = $_POST['prenom'];
-  //  $email = $_POST['email'];
-  //  $password = $_POST['password'];
-    
-//$req = "INSERT INTO users ( nom, prenom, email, password) VALUES( ?, ?, ?, ?)";
-//$execute = $pdo->prepare($req);
-// $stm = $execute->execute([$nom,$prenom,$email,$password]);
 
-   //if (!$result->num_rows > 0) {
-  //  $sql = "INSERT INTO users ( nom, prenom, email, password) VALUES( $nom,$prenom,$email, $password)";
-  //  $result = mysqli_query($conn, $sql);
-  // }
-//}
 if (isset($_POST['enregistrer'])) {
 
 
@@ -36,11 +22,7 @@ if (isset($_POST['enregistrer'])) {
 
 ?>
 
-<!-- ICI DOIT APPARAITRE LE CODE PHP CONTENANT
-    LA LIAISON AVEC LA BASE DE DONNEES
-    LA DECLARATION DES VARIABLES
-    ET LA GESTION DES ERREURS
--->
+
 
 
 

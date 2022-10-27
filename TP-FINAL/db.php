@@ -1,18 +1,6 @@
 <?php
- //$bdd = new PDO('mysql:host=localhost;dbname=tpfinal;charset=utf8', 'root','root');
-///$server = "localhost";
-//$user = "root";
-//$pass = "root";
-//$database = "tpfinal";
 
-// $conn = mysqli_connect($server, $user, $pass, $database);
-
-$conn=mysqli_connect('localhost','root','root','tpfinal');
-if(!$conn){
-    die('erreur de connexion a la base de donnée');
-}else{
-    }
-
+// Connexion a la base de donnnée avec PDO suivi de la base de donnée , nom de l'hote , identifiant et mot de passe;
 
  $pdo= new PDO('mysql:dbname=tpfinal;host=localhost','root','root');
 
